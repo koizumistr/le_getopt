@@ -26,10 +26,10 @@ feature {ANY}
                idx := long_opts.last_index_of(arg_i)
                if idx /= -1 then
                   if arg_array.item(idx) then
-                     d.add(command_arguments.item(i + 1), short_opts.item(idx))
+                     d.put(command_arguments.item(i + 1), short_opts.item(idx))
                      command_arguments.remove(i + 1)
                   else
-                     d.add("", short_opts.item(idx))
+                     d.put("", short_opts.item(idx))
                   end
                end
 
@@ -46,14 +46,14 @@ feature {ANY}
                         if arg_i.count > 1 then
                            arg_i.remove_head(1)
                            create s.make_from_string(arg_i)
-                           d.add(s, short_opts.item(idx))
+                           d.put(s, short_opts.item(idx))
                         else
-                           d.add(command_arguments.item(i + 1), short_opts.item(idx))
+                           d.put(command_arguments.item(i + 1), short_opts.item(idx))
                            command_arguments.remove(i + 1)
                         end
                         arg_i.clear_count
                      else
-                        d.add("", short_opts.item(idx))
+                        d.put("", short_opts.item(idx))
                         arg_i.remove_head(1)
                      end
                   else
