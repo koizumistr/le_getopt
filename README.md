@@ -3,7 +3,7 @@
 getopt-like class in Liberty Eiffel
 
 ## 日本語での説明
-getoptっぽいことをするEiffelのクラス(le_getopt.e)です。
+getoptっぽいことをするLiberty Eiffel[^othereiffel]のクラス(le_getopt.e)です。
 説明は面倒になったので、サンプルのle_getopt_test.eを見てください。
 
 というのもあんまりですからもうちょっと説明。
@@ -27,3 +27,5 @@ le_getopt_test.eをコンパイルして、コマンドライン引数として�
     == arguments ==
     gooo
     hijkl
+
+[^othereiffel]: Liberty Eiffelでしか動作を確かめていません。というか、他のEiffel（と言っても本家くらいしか知りませんが）では、もっともっと本気のライブラリがあるようですので、こんなの不必要でしょう。Liberty EiffelでもgetoptのCライブラリのラッパーがあるので、そちらを使うのが正当なのかもしれませんが、引数をまるっと渡す方法が分からず、私には使えませんでした(T_T)
