@@ -21,7 +21,7 @@ feature {ANY}
             i > argument_count
          loop
             arg_i := command_arguments.item(i)
-            if arg_i.has_prefix("--") then
+            if arg_i.has_prefix(once "--") then
                arg_i.remove_head(2)
                idx := long_opts.last_index_of(arg_i)
                if idx /= -1 then
@@ -29,12 +29,12 @@ feature {ANY}
                      d.put(command_arguments.item(i + 1), short_opts.item(idx))
                      command_arguments.remove(i + 1)
                   else
-                     d.put("", short_opts.item(idx))
+                     d.put(once "", short_opts.item(idx))
                   end
                end
 
                command_arguments.remove(i)
-            elseif arg_i.has_prefix("-") then
+            elseif arg_i.has_prefix(once "-") then
                arg_i.remove_head(1)
                from
                until
@@ -53,7 +53,7 @@ feature {ANY}
                         end
                         arg_i.clear_count
                      else
-                        d.put("", short_opts.item(idx))
+                        d.put(once "", short_opts.item(idx))
                         arg_i.remove_head(1)
                      end
                   else
