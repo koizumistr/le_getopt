@@ -57,7 +57,7 @@ feature {ANY}
                         arg_i.remove_head(1)
                      end
                   else
-                     std_error.put_string("Unknown option: " + arg_i.first.to_string + "%N")
+                     std_error.put_string(once "Unknown option: " + arg_i.first.to_string + once "%N")
                      arg_i.remove_head(1)
                   end
                end
